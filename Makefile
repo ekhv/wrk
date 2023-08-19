@@ -50,6 +50,9 @@ all: $(BIN)
 clean:
 	$(RM) -rf $(BIN) obj/*
 
+docker:
+	docker build -t wrk .
+
 $(BIN): $(OBJ)
 	@echo LINK $(BIN)
 	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
